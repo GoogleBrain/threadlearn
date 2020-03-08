@@ -34,7 +34,7 @@ class ABC{
 
     public void A(){
         lock.lock();
-        if(a!=1){
+        while(a!=1){
             try {
                 c1.await();
             } catch (InterruptedException e) {
@@ -48,7 +48,7 @@ class ABC{
     }
     public void B(){
         lock.lock();
-         if(a!=2){
+        while(a!=2){
              try {
                  c2.await();
              } catch (InterruptedException e) {
